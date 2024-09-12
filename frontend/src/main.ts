@@ -7,6 +7,8 @@ import 'vuetify/styles' // Global CSS has to be imported
 import * as components from 'vuetify/components'
 import * as directives from 'vuetify/directives'
 import router from './router/router'
+import '@fortawesome/fontawesome-free/css/all.css'
+
 
 const vuetify = createVuetify({
   components,
