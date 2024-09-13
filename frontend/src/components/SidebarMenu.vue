@@ -6,7 +6,10 @@
           :key="item.text"
           :to="item.link"
         >
-          {{ item.text }}
+        <template v-slot:prepend>
+          <v-icon>{{ item.icon }}</v-icon>
+        </template>
+        <v-list-item-title>{{ item.text }}</v-list-item-title>
         </v-list-item>
       </v-list>
     </v-navigation-drawer>
@@ -17,7 +20,7 @@
   
   // Define props for dynamic menu items
   const props = defineProps<{
-    menuItems: { text: string; link: string }[];
+    menuItems: { text: string; link: string, icon: string }[];
     drawer:boolean
   }>();
 

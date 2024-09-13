@@ -27,7 +27,7 @@ const drawer = ref(true); // true artinya drawer awalnya terbuka
 // });
 
 const menuItems = ref([
-  { text: 'Dashboard', link: '/dashboard' },
-  { text: 'Vendor', link: '/vendor' },
+  { text: 'Dashboard', link: '/dashboard', icon: 'mdi-apps'},
+  { text: 'Vendor', link: '/vendor',icon:'mdi-account-box' },
 ]);
 </script>
