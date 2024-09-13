@@ -1,11 +1,8 @@
-// sum.test.ts
 import { describe, expect, it } from 'vitest';
 import { mount } from '@vue/test-utils';
-import AppBar from '../src/components/AppBar.vue'; 
-import { checkPrime } from 'crypto';
+import AppBar from '../src/components/AppBar.vue';
 
 const appBarName = 'Dashboard'
-const appBarNameReject = 123
 const wrapper = mount(AppBar,{
     props:{
         AppBarName:appBarName
