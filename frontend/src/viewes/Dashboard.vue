@@ -19,7 +19,7 @@
 
     <v-main>
       <v-container :style="containerStyle">
-        <h1>Welcome to Dashboard</h1>
+        <h1>Welcome to Dashboard Page</h1>
 
         <!-- <v-btn @click="increment">Count is: {{ count }}</v-btn>
         <router-link to="/vendor">List Vendor</router-link> -->
