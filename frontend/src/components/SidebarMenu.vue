@@ -12,11 +12,15 @@
         <v-list-item-title>{{ item.text }}</v-list-item-title>
         </v-list-item>
       </v-list>
+      <div class="logout-button">
+      <Button icon="mdi-logout" bgColor="Darkblue" fontColor="white" ButtonName="Logout"></Button>
+    </div>
     </v-navigation-drawer>
   </template>
   
   <script lang="ts" setup>
  import { ref, watch, defineProps, defineEmits } from 'vue';
+ import Button from '../components/Button.vue';
   
   // Define props for dynamic menu items
   const props = defineProps<{
@@ -42,3 +46,12 @@ watch(localDrawer, (newValue) => {
   emit('update:drawer', newValue);
 });
 </script>
+<style scoped>
+.logout-button {
+  position: absolute;
+  bottom: 0px; /* Adjust as needed */
+  left: 0;
+  right: 0;
+  padding-bottom: 2px;
+}
+</style>
