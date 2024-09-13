@@ -11,7 +11,7 @@
 
     <!-- Konten utama aplikasi -->
     <v-app-bar app>
-      <v-btn @click="toggleDrawer">
+      <v-btn @click="toggleDrawer" data-type="btnSideBarTest">
         <v-icon size="20"><i class="fas fa-bars"></i></v-icon>
       </v-btn>
       <span>Dashboard</span>

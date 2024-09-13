@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "start":"npm run test && npm run dev", 
+    "start": "npm run test && npm run dev",
     "dev": "vite",
     "test": "vitest",
     "build": "vue-tsc -b && vite build",
@@ -20,6 +20,8 @@
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^5.1.2",
+    "@vue/test-utils": "^2.2.6",
+    "jsdom": "^25.0.0",
     "typescript": "^5.5.3",
     "vite": "^5.4.1",
     "vitest": "^2.1.0",
