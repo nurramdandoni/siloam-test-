@@ -1,5 +1,5 @@
 <template>
-    <v-btn :prepend-icon="icon" :style="{ color: fontColor, backgroundColor: bgColor }" block>{{ ButtonName }}</v-btn>
+    <v-btn :prepend-icon="icon" :style="{ color: fontColor, backgroundColor: bgColor }">{{ ButtonName }}</v-btn>
     <!-- <v-btn :prepend-icon="icon">{{ ButtonName }}</v-btn> -->
   </template>
   

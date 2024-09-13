@@ -13,7 +13,7 @@
         </v-list-item>
       </v-list>
       <div class="logout-button">
-      <Button icon="mdi-logout" bgColor="Darkblue" fontColor="white" ButtonName="Logout"></Button>
+      <Button icon="mdi-logout" bgColor="Darkblue" fontColor="white" ButtonName="Logout" block></Button>
     </div>
     </v-navigation-drawer>
   </template>
