@@ -4,7 +4,8 @@ export default defineConfig({
     test: {
         environment: 'jsdom',
         globals: true,
-        dir:'test'
+        dir:'test',
+        setupFiles: './vitest.setup.ts',
     },
     plugins: [vue()]
 })
