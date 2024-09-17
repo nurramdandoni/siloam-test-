@@ -16,13 +16,17 @@
 </template>
 
 <script lang="ts" setup>
-import { ref, defineProps } from "vue";
+import { ref, defineProps, defineEmits } from "vue";
 import SidebarMenu from "./SidebarMenu.vue";
 import SelectUnit from "./SelectBox.vue";
 
 // Mendefinisikan props AppBarName
 const props = defineProps<{
   AppBarName: string;
+}>();
+
+const emit = defineEmits<{
+  (e: 'keyValue', key: string): void;
 }>();
 
 const toggleDrawer = () => {
@@ -47,6 +51,8 @@ const itemsCombo = [
 
 const dataKey = (key: string) => {
   console.log(`Selected Key: ${key}`);
+  emit('keyValue', key);
+
 };
 </script>
 <style scoped>

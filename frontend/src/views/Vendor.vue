@@ -1,6 +1,6 @@
 <template>
   <v-app>
-    <AppBar AppBarName="Vendor"></AppBar>
+    <AppBar AppBarName="Vendor" @keyValue="updateContent"></AppBar>
     <v-main>
       <!-- <v-container> -->
       <div style="padding: 20px; background-color: darkgray">
@@ -45,7 +45,7 @@ const headers = ref<Header[]>([
   { title: "Adress", key: "address", sortable: true, align: "start" },
 ]);
 
-const data = [
+const data = ref<DataList[]>([
   {
     id: 159,
     name: "Frozen Yogurt",
@@ -56,10 +56,38 @@ const data = [
     name: "Ice Cream Sandwich",
     address: "9.0",
   },
-];
+]);
 const totalItems = ref(0);
 const loading = ref(false);
 const itemsPerPage = ref(10);
+
+function updateContent(key: string) {
+  console.log("Key adalah:", key);
+  if(key == "2" || key == "3") {
+
+    data.value = [
+      {
+        id: 159,
+        name: "Frozen Yogurt",
+        address: "6.0",
+      },
+      {
+        id: 237,
+        name: "Ice Cream Sandwich",
+        address: "9.0",
+      },
+      {
+        id: 237,
+        name: "Ice Cream Sandwich",
+        address: "9.0",
+      },
+    ];
+  }else{
+    data.value = []
+
+  }
+}
+
 </script>
 
 <style scoped>
