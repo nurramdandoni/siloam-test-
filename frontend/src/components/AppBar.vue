@@ -18,7 +18,7 @@
 <script lang="ts" setup>
 import { ref, defineProps } from "vue";
 import SidebarMenu from "./SidebarMenu.vue";
-import SelectUnit from "./SelectUnit.vue";
+import SelectUnit from "./SelectBox.vue";
 
 // Mendefinisikan props AppBarName
 const props = defineProps<{
