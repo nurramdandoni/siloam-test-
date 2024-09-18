@@ -3,12 +3,21 @@
 - Git Bash
 - Visual Studio Code
 - NodeJS Versi 18+
+- PosgreeSQL Versi 17
 
 # Struktur Aplikasi
 Aplikasi ini terdiri dari 3 Folder :
 1. frontend : Script Aplikasi Frontend
 2. backend  : Script Aplikasi Backend
 3. database : Sql Dump, DDL Script
+
+# Database
+Sebelumnya kita perlu database sebelum menjalankan project, pada project ini kita menggunakan Posgree SQL LInk Donwloadnya ada disini <a href="https://www.enterprisedb.com/downloads/postgres-postgresql-downloads">Download Postgresql</a>
+
+1. Lakukan Installasi mengikuti petunjuk pada website postgree sesuai dengan sistem operasi yang digunakan
+2. Jangan lupa untuk menyimpan Password saat melakukan installasi
+3. Silahkan atur port database posgree, secara default postgree mengggunakan Port 5432
+4. Untuk Locale pilih Indonesia
 
 # Backend
 Untuk Menjalankan Aplikasi Backend ikuti tahap - tahap berikut :
@@ -26,6 +35,20 @@ cd backend
 Pada Git Bash yang telah terbuka silahkan lakukan installasi package dengan cara ketik
 ```
 npm install
+```
+
+### 3. Melakukan Migration Database
+Lakukan Penyesuaian koneksi database pada file ``.env`` atau pada file ``/src/config/database.ts``
+
+```
+  host: 'host_database',
+  username: 'username_database',
+  password: 'password_database',
+  database: 'nama_database',
+```
+Setelah Koneksi Database diatur, maka jalankan
+```
+npx sequelize-cli db:migrate
 ```
 
 

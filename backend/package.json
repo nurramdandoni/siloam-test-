@@ -19,7 +19,12 @@
     "mysql2": "^3.11.3",
     "sequelize": "^6.37.3",
     "sequelize-typescript": "^2.1.6",
-    "ts-node-dev": "^2.0.0",
+    "ts-node-dev": "^2.0.0"
+  },
+  "devDependencies": {
+    "sequelize-cli": "^6.6.2",
+    "ts-node": "^10.9.2",
+    "tsconfig-paths": "^4.2.0",
     "typescript": "^5.6.2"
   }
 }
