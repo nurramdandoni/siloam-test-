@@ -1,10 +1,11 @@
 <template>
   <v-app>
-    <AppBar AppBarName="Vendor" @keyValue="updateContent"></AppBar>
+    <AppBar AppBarName="Vendor" @keyValue="updateContent" @openDialog="showDialog = true"></AppBar>
     <v-main>
       <!-- <v-container> -->
       <div style="padding: 20px; background-color: darkgray">
         <h4>List vendor</h4>
+        <div class="add-vendor"><AddVendor :FormTitle="formTitle" :BtnName="btnNme" @saveVendor="updateTable"></AddVendor></div>
       </div>
       <Table
         :headers="headers"
@@ -23,6 +24,7 @@
 import { ref } from "vue";
 import AppBar from "../components/AppBar.vue";
 import Table from "../components/Table.vue";
+import AddVendor from "../components/FormDialog.vue"
 type Header = {
   title: string;
   key: string;
@@ -60,6 +62,9 @@ const data = ref<DataList[]>([
 const totalItems = ref(0);
 const loading = ref(false);
 const itemsPerPage = ref(10);
+const showDialog = ref(false);
+let formTitle = ref("Add Vendor");
+let btnNme = ref("Add Vendor");
 
 function updateContent(key: string) {
   console.log("Key adalah:", key);
@@ -88,8 +93,25 @@ function updateContent(key: string) {
   }
 }
 
+function updateTable(newVendor:DataList) {
+  data.value.push(newVendor);
+  console.log("Tabel diperbarui:", data.value);
+}
+
 </script>
 
 <style scoped>
-/* Tambahkan style jika dibutuhkan */
+.add-vendor {
+  position: absolute;
+  right: 0;
+  margin-top:-30px;
+  margin-right: 20px;
+  /* top:10; */
+  /* margin-top: 15px;
+  margin-right: 20px;
+  position: absolute;
+  right: 0;
+  width: 300px;
+  max-width: 30%; */
+}
 </style>
