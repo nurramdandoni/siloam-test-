@@ -2,10 +2,20 @@
 import { describe, expect, it } from 'vitest';
 import { mount } from '@vue/test-utils';
 import Dashboard from '../src/views/Dashboard.vue'; 
+import { checkPrime } from 'crypto';
 
 const wrapper = mount(Dashboard);
 
 describe("Dashboard tests", () => {
+  // sample dom check
+  // it("Cek function counter?", async () => {
+  //   // Access button
+  //   const buttonSidebar = wrapper.find('[data-type="btnCounterTest"]');
+  //   expect(buttonSidebar.exists()).toBe(true);
+  //   await buttonSidebar.trigger('click');
+  //   expect(wrapper.vm.count).toBeGreaterThan(0);
+  // });
+
   it("Cek Sidebar Show on First Loaded?", () => {
     // Access the drawer ref
     expect(wrapper.vm.drawer).toBe(true);
@@ -24,4 +34,5 @@ describe("Dashboard tests", () => {
     await buttonSidebar.trigger('click');
     expect(wrapper.vm.drawer).toBe(true);
   });
+  
 });
