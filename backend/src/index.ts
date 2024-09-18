@@ -1,23 +1,15 @@
-import express, { Request, Response } from 'express';
+import express, { Request, Response } from "express";
+import dotenv from "dotenv";
+
+dotenv.config();
 
 const app = express();
-const port = 3000;
 
-// Middleware untuk parsing JSON
-app.use(express.json());
-
-// Route GET sederhana
-app.get('/', (req: Request, res: Response) => {
-  res.send('Hello, TypeScript API!');
+app.get("/", (req: Request, res: Response) => {
+  return res.status(200).json({ message: "hello" });
 });
 
-// Route POST sederhana
-app.post('/data', (req: Request, res: Response) => {
-  const { name, age } = req.body;
-  res.json({ message: `Received data: Name = ${name}, Age = ${age}` });
-});
-
-// Jalankan server
-app.listen(port, () => {
-  console.log(`Server berjalan di http://localhost:${port}`);
+app.listen(process.env.APP_PORT, () => {
+  console.log(`Server is running on port ${process.env.APP_PORT}`);
+  // console.log(process.env.APP_PORT);
 });
