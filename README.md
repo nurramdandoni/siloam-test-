@@ -38,20 +38,29 @@ npm install
 ```
 
 ### 3. Melakukan Migration Database
-Lakukan Penyesuaian koneksi database pada file ``.env`` atau pada file ``/src/config/database.ts``
+*note : Dialec Default adalah 'postgres'<br>
+Lakukan Penyesuaian koneksi database pada file ``.env``
 
 ```
-  host: 'host_database',
-  username: 'username_database',
-  password: 'password_database',
-  database: 'nama_database',
+APP_PORT=4000
+
+DB_HOST=localhost
+DB_USER=postgres
+DB_PASSWORD=latihan1
+DB_NAME=postgres
+DB_PORT=5432
 ```
 Setelah Koneksi Database diatur, maka jalankan
 ```
 npx sequelize-cli db:migrate
 ```
+### 4. Menjalankan Backend Server
+Seletah Semuanya dilakukan, saatknya menjalankan server backend
+```
+npm run dev
+```
 
-
+Setelah Console memberikan informasi ``Server is running on port ...`` itu artinya server backend telah aktif dan siap menerima request
 
 
 
